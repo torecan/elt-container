@@ -1,0 +1,17 @@
+version: '3.5'
+services:
+  python_elt_img:
+    container_name: elt_python_container
+#    depends_on:
+#      - mysql_seo_img_dev
+    build:
+      context: .
+    volumes:
+      - ./src:/srv/app/
+    networks:
+      elt-network:
+    ports:
+      - "8001:22"
+
+networks:
+  elt-network:
